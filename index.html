@@ -1,193 +1,159 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quarterly Earnings — Interactive RevealJS Deck</title>
-    <meta name="description" content="Interactive quarterly earnings presentation (RevealJS) with markdown, fragments, code, math, mermaid, and speaker notes." />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quarterly Earnings — Interactive Tech Deck</title>
 
-    <!-- Reveal core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
-    <!-- Theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" id="theme">
+  <!-- Reveal.js core CSS (via CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css" />
+  <!-- Theme (choose: beige, black, blood, league, moon, night, serif, simple, sky, solarized, white) -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/black.css" id="theme" />
+  <!-- Code highlighting theme (highlight.js) -->
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.9.0/styles/github.css" />
 
-    <!-- Code highlight theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css">
+  <style>
+    /* Optional: a few tasteful tweaks */
+    .reveal .slide-number { background: rgba(0,0,0,0.6); padding: 0.25rem 0.5rem; border-radius: 0.5rem; }
+    .reveal h1, .reveal h2, .reveal h3 { letter-spacing: 0.4px; }
+    .brand { position: absolute; top: 12px; right: 18px; font-size: 16px; opacity: 0.8; }
+    .brand a { color: #9ad1ff; text-decoration: none; }
+    .subtitle { font-size: 1.1rem; opacity: 0.9; }
+    .muted { opacity: 0.75; font-size: 0.9rem; }
+    .kpi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
+    .kpi .card { background: rgba(255,255,255,0.06); padding: 18px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+    .kpi .metric { font-size: 2rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
 
-    <style>
-      .reveal .slide-logo {
-        position: absolute; right: 20px; bottom: 20px; opacity: 0.5; font-size: 12px;
-      }
-      .footer {
-        position: absolute; left: 20px; bottom: 10px; font-size: 12px; opacity: 0.7;
-      }
-      .kpi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
-      .kpi > div { padding: 1rem 1.25rem; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
-      .kpi .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: .06em; opacity: .8; }
-      .kpi .value { font-size: 2.2rem; font-weight: 700; }
-      .kpi .delta { font-size: 0.9rem; }
-      .pill { display: inline-block; padding: .25rem .6rem; border-radius: 999px; border: 1px solid rgba(0,0,0,.15); font-size: .8rem; }
-    </style>
-  </head>
+      <!-- TITLE -->
+      <section>
+        <div class="brand">Quarterly Earnings · Q2 FY2025</div>
+        <h1>Interactive Earnings Brief</h1>
+        <p class="subtitle">Modern presentation capabilities with RevealJS</p>
+        <p class="muted">Technical Consultant · <strong>23f2003651@ds.study.iitm.ac.in</strong></p>
+        <aside class="notes">
+          Welcome the stakeholders. Mention that this deck is fully web-native, keyboard navigable, and published on GitHub Pages.
+          Remind yourself to open the speaker view with the <kbd>S</kbd> key.
+        </aside>
+      </section>
 
-  <body>
-    <div class="reveal">
-      <div class="slides">
+      <!-- MARKDOWN SLIDE (required) -->
+      <section data-markdown>
+        <textarea data-template>
+# Agenda (Markdown Slide)
 
-        <!-- Title -->
-        <section data-transition="fade">
-          <h1>Quarterly Earnings Report</h1>
-          <p class="pill">Interactive RevealJS presentation</p>
-          <p>Prepared by: Technical Consultant</p>
-          <p>Contact: <strong>22ds1000103@ds.study.iitm.ac.in</strong></p>
-          <aside class="notes">
-            Welcome! Use the arrow keys or spacebar to navigate. Press 'S' for speaker view.
-            This deck demonstrates markdown, fragments, code highlighting, math, mermaid, and notes.
-          </aside>
-          <div class="footer">Tip: add <code>?v=1</code>, <code>?v=2</code> to refresh cached content.</div>
-        </section>
+1. Highlights and KPIs
+2. Technical deep-dive (pipelines, telemetry)
+3. Code & reproducibility
+4. Financial formulas & assumptions
+5. Roadmap / Q&A
 
-        <!-- KPIs with fragments (animated reveals) -->
-        <section>
-          <h2>Headline KPIs</h2>
-          <div class="kpi">
-            <div class="fragment">
-              <div class="label">Revenue</div>
-              <div class="value">$3.2B</div>
-              <div class="delta">QoQ <span>▲ 6.4%</span></div>
-            </div>
-            <div class="fragment">
-              <div class="label">Net Income</div>
-              <div class="value">$410M</div>
-              <div class="delta">QoQ <span>▲ 3.1%</span></div>
-            </div>
-            <div class="fragment">
-              <div class="label">EPS (Diluted)</div>
-              <div class="value">$1.18</div>
-              <div class="delta">YoY <span>▲ 9.0%</span></div>
-            </div>
+Note:
+- This slide proves Markdown support. Keep cadence tight.
+- Use **right arrow** to proceed, **S** for speaker view.
+        </textarea>
+      </section>
+
+      <!-- KPIs with FRAGMENTS (animated elements) -->
+      <section>
+        <h2>Highlights — At a Glance</h2>
+        <div class="kpi">
+          <div class="card fragment fade-in">
+            <div class="metric">$2.31B</div>
+            <div class="muted">Revenue (↑ 8% YoY)</div>
           </div>
-          <aside class="notes">
-            Each KPI appears as a fragment. Use fragments to time your narrative.
-          </aside>
-        </section>
+          <div class="card fragment fade-in">
+            <div class="metric">$612M</div>
+            <div class="muted">Operating Income (↑ 5% YoY)</div>
+          </div>
+          <div class="card fragment fade-in">
+            <div class="metric">$0.84</div>
+            <div class="muted">EPS (Non-GAAP)</div>
+          </div>
+        </div>
+        <ul style="margin-top:20px">
+          <li class="fragment fade-up">Cloud migration trimmed infra cost by ~12% QoQ</li>
+          <li class="fragment fade-up">Risk platform latency reduced from 220ms → 95ms</li>
+          <li class="fragment fade-up">Data quality SLO: 99.6% met (↑ from 98.9%)</li>
+        </ul>
+        <aside class="notes">Pause on each fragment to narrate the why: mix of product, infra, and process improvements; emphasize sustainable gains.</aside>
+      </section>
 
-        <!-- Markdown slide -->
-        <section data-markdown>
-          <textarea data-template>
-## Business Highlights _(Markdown)_
-
-- **Client growth:** +12% YoY  
-- **Cloud migration:** 68% of workloads
-- **Operational efficiency:** Automation saved ~**$14M** YTD
-
-> _Stakeholder takeaway:_ disciplined cost control + durable top-line.
-
-**Email:** 22ds1000103@ds.study.iitm.ac.in
-
-Notes:
-- This slide is authored in Markdown directly inside the HTML using `data-markdown`.
-- You can also load external `.md` files if preferred.
-          </textarea>
-          <aside class="notes">
-            Call out that this slide is pure Markdown. Mention the email again for contact.
-          </aside>
-        </section>
-
-        <!-- Code sample with syntax highlighting -->
-        <section>
-          <h2>Code Sample — KPI Trend Calculation</h2>
-          <pre><code class="language-python" data-trim>
+      <!-- CODE with syntax highlighting -->
+      <section>
+        <h2>ETL Validation — Sample Task</h2>
+        <pre><code class="language-python" data-trim data-noescape>
 import pandas as pd
 
-def growth_rate(current, prior):
-    # Simple QoQ growth rate calculation
-    return (current / prior - 1.0) * 100.0
+# Load anonymized transactions and compute net interest income (NII)
+df = pd.read_csv("transactions.csv")
 
-revenue_q2 = 3_200_000_000
-revenue_q1 = 3_005_000_000
-print(f"QoQ revenue growth: {growth_rate(revenue_q2, revenue_q1):.2f}%")
-          </code></pre>
-          <aside class="notes">
-            The Highlight plugin auto-detects languages by class name (language-python).
-            You can paste SQL, Java, YAML — anything. Keep snippets concise.
-          </aside>
-        </section>
+nii = (
+    df.assign(
+        interest_income=lambda d: d["loan_bal"] * d["rate_annual"] / 12,
+        interest_expense=lambda d: d["deposit_bal"] * d["cost_of_funds"] / 12,
+    )["interest_income"].sum()
+    - df["interest_expense"].sum()
+)
 
-        <!-- Math / financial formulas -->
-        <section>
-          <h2>Financial Math</h2>
-          <p>Net Present Value:</p>
-          <p>$$\\text{NPV} = \\sum_{t=1}^{T} \\frac{CF_t}{(1+r)^t} - C_0$$</p>
-          <p>CAPM:</p>
-          <p>$$\\mathbb{E}[R_i] = R_f + \\beta_i (R_m - R_f)$$</p>
-          <p class="fragment">Sharpe Ratio: $$S = \\frac{\\mathbb{E}[R_p - R_f]}{\\sigma_p}$$</p>
-          <aside class="notes">
-            Math rendered via MathJax. Use inline $...$ or block $$...$$.
-          </aside>
-        </section>
+print(f"Net Interest Income (monthly): {nii:,.2f}")
+        </code></pre>
+        <p class="muted">Shown with <code>highlight.js</code> via Reveal's highlight plugin.</p>
+        <aside class="notes">Mention reproducibility: scripts, pinned deps, and CI checks. This is illustrative; numbers are placeholders.</aside>
+      </section>
 
-        <!-- Extra statistical math (MathJax) -->
-        <section>
-          <h2>Statistical Formula</h2>
-          \[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\]
-        </section>
+      <!-- MATH: Financial formulas -->
+      <section>
+        <h2>Financial Formulas</h2>
+        <p>Present Value of future cash flows:</p>
+        <p>\[ \mathrm{PV} = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} \]</p>
+        <p>Capital Asset Pricing Model (expected return):</p>
+        <p>\[ \mathbb{E}[R_i] = R_f + \beta_i\,(\mathbb{E}[R_m] - R_f) \]</p>
+        <p class="muted">These render via MathJax using Reveal's math plugin.</p>
+        <aside class="notes">Explain discount rate sensitivity (r) and scenario analysis. Tie to WACC and risk appetite.</aside>
+      </section>
 
-        <!-- Mermaid diagram -->
-        <section>
-          <h2>Workflow</h2>
-          <div class="mermaid">
-            graph TD
-              A[Data] -->|Process| B[Analysis]
-              B --> C[Visualization]
-          </div>
-        </section>
+      <!-- NOTES DEMO & CONTACT -->
+      <section>
+        <h2>Speaker Tools & Contact</h2>
+        <ul>
+          <li>Press <strong>S</strong> for Speaker View</li>
+          <li>Use <strong>F</strong> for Fullscreen</li>
+          <li>Press <strong>.</strong> to pause the screen</li>
+        </ul>
+        <p>Questions? <strong>22ds1000103@ds.study.iitm.ac.in</strong></p>
+        <aside class="notes">Wrap up; invite questions. Mention GitHub Pages URL in follow-up slide or readme.</aside>
+      </section>
 
-        <!-- Closing -->
-        <section data-transition="convex">
-          <h2>Q&A</h2>
-          <p class="fragment">Thank you!</p>
-          <p class="fragment">Contact: <strong>22ds1000103@ds.study.iitm.ac.in</strong></p>
-          <aside class="notes">
-            Invite questions. Share the GitHub Pages link. Remind them they can add ?v=2 to bypass cache.
-          </aside>
-        </section>
-
-      </div>
     </div>
+  </div>
 
-    <!-- Reveal core JS (ESM) + plugins -->
-    <script type="module">
-      import Reveal from "https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.esm.js";
-      import Markdown from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.esm.js";
-      import Highlight from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.esm.js";
+  <!-- Reveal.js core JS + plugins (via CDN) -->
+  <script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/math/math.js"></script>
 
-      const deck = new Reveal({
-        hash: true,
-        slideNumber: true,
-        transition: "fade",
-        plugins: [ Markdown, Highlight ]
-      });
-      deck.initialize();
-    </script>
-
-    <!-- MathJax -->
-    <script>
-      window.MathJax = {
+  <script>
+    // Initialize Reveal
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.MathJax3 ],
+      // MathJax 3 config (CDN)
+      math: {
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[','\\]']]
-        },
-        svg: { fontCache: 'global' }
-      };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-
-    <!-- Mermaid -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>
-      mermaid.initialize({ startOnLoad: true, theme: "default" });
-    </script>
-
-  </body>
+          inlineMath: [['\\(','\\)'], ['$', '$']],
+          displayMath: [['\\[','\\]'], ['$$','$$']]
+        }
+      }
+    });
+  </script>
+</body>
 </html>
