@@ -4,15 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quarterly Earnings — Interactive RevealJS Deck</title>
-    <meta name="description" content="Interactive quarterly earnings presentation (RevealJS) with markdown, fragments, code, math, and speaker notes." />
+    <meta name="description" content="Interactive quarterly earnings presentation (RevealJS) with markdown, fragments, code, math, mermaid, and speaker notes." />
 
     <!-- Reveal core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
-    <!-- Theme (choose: beige, black, blood, league, moon, night, serif, simple, sky, solarized, white) -->
+    <!-- Theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" id="theme">
 
     <!-- Code highlight theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css">
+
     <style>
       .reveal .slide-logo {
         position: absolute; right: 20px; bottom: 20px; opacity: 0.5; font-size: 12px;
@@ -41,7 +42,7 @@
           <p>Contact: <strong>22ds1000103@ds.study.iitm.ac.in</strong></p>
           <aside class="notes">
             Welcome! Use the arrow keys or spacebar to navigate. Press 'S' for speaker view.
-            This deck demonstrates markdown, fragments, code highlighting, math, and notes.
+            This deck demonstrates markdown, fragments, code highlighting, math, mermaid, and notes.
           </aside>
           <div class="footer">Tip: add <code>?v=1</code>, <code>?v=2</code> to refresh cached content.</div>
         </section>
@@ -117,16 +118,32 @@ print(f"QoQ revenue growth: {growth_rate(revenue_q2, revenue_q1):.2f}%")
         <section>
           <h2>Financial Math</h2>
           <p>Net Present Value:</p>
-          <p>$$\text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} - C_0$$</p>
+          <p>$$\\text{NPV} = \\sum_{t=1}^{T} \\frac{CF_t}{(1+r)^t} - C_0$$</p>
           <p>CAPM:</p>
-          <p>$$\mathbb{E}[R_i] = R_f + \beta_i (R_m - R_f)$$</p>
-          <p class="fragment">Sharpe Ratio: $$S = \frac{\mathbb{E}[R_p - R_f]}{\sigma_p}$$</p>
+          <p>$$\\mathbb{E}[R_i] = R_f + \\beta_i (R_m - R_f)$$</p>
+          <p class="fragment">Sharpe Ratio: $$S = \\frac{\\mathbb{E}[R_p - R_f]}{\\sigma_p}$$</p>
           <aside class="notes">
-            Math rendered via the KaTeX-based math plugin. Use inline $...$ or block $$...$$.
+            Math rendered via MathJax. Use inline $...$ or block $$...$$.
           </aside>
         </section>
 
-        <!-- Closing with call to action -->
+        <!-- Extra statistical math (MathJax) -->
+        <section>
+          <h2>Statistical Formula</h2>
+          \[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\]
+        </section>
+
+        <!-- Mermaid diagram -->
+        <section>
+          <h2>Workflow</h2>
+          <div class="mermaid">
+            graph TD
+              A[Data] -->|Process| B[Analysis]
+              B --> C[Visualization]
+          </div>
+        </section>
+
+        <!-- Closing -->
         <section data-transition="convex">
           <h2>Q&A</h2>
           <p class="fragment">Thank you!</p>
@@ -144,22 +161,33 @@ print(f"QoQ revenue growth: {growth_rate(revenue_q2, revenue_q1):.2f}%")
       import Reveal from "https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.esm.js";
       import Markdown from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.esm.js";
       import Highlight from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.esm.js";
-      import Math from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.esm.js";
 
       const deck = new Reveal({
         hash: true,
         slideNumber: true,
         transition: "fade",
-        plugins: [ Markdown, Highlight, Math ],
-        // KaTeX config for math plugin
-        math: {
-          katexScript: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js",
-          katexStylesheet: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
-          // Enable $...$ inline math
-          inlineDelimiter: ["$", "$"],
-        }
+        plugins: [ Markdown, Highlight ]
       });
       deck.initialize();
     </script>
+
+    <!-- MathJax -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[','\\]']]
+        },
+        svg: { fontCache: 'global' }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+
+    <!-- Mermaid -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true, theme: "default" });
+    </script>
+
   </body>
 </html>
