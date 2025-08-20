@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quarterly Earnings — Interactive RevealJS Deck</title>
+    <meta name="description" content="Interactive quarterly earnings presentation (RevealJS) with markdown, fragments, code, math, and speaker notes." />
+
+    <!-- Reveal core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+    <!-- Theme (choose: beige, black, blood, league, moon, night, serif, simple, sky, solarized, white) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" id="theme">
+
+    <!-- Code highlight theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css">
+    <style>
+      .reveal .slide-logo {
+        position: absolute; right: 20px; bottom: 20px; opacity: 0.5; font-size: 12px;
+      }
+      .footer {
+        position: absolute; left: 20px; bottom: 10px; font-size: 12px; opacity: 0.7;
+      }
+      .kpi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+      .kpi > div { padding: 1rem 1.25rem; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
+      .kpi .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: .06em; opacity: .8; }
+      .kpi .value { font-size: 2.2rem; font-weight: 700; }
+      .kpi .delta { font-size: 0.9rem; }
+      .pill { display: inline-block; padding: .25rem .6rem; border-radius: 999px; border: 1px solid rgba(0,0,0,.15); font-size: .8rem; }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Title -->
+        <section data-transition="fade">
+          <h1>Quarterly Earnings Report</h1>
+          <p class="pill">Interactive RevealJS presentation</p>
+          <p>Prepared by: Technical Consultant</p>
+          <p>Contact: <strong>22ds1000103@ds.study.iitm.ac.in</strong></p>
+          <aside class="notes">
+            Welcome! Use the arrow keys or spacebar to navigate. Press 'S' for speaker view.
+            This deck demonstrates markdown, fragments, code highlighting, math, and notes.
+          </aside>
+          <div class="footer">Tip: add <code>?v=1</code>, <code>?v=2</code> to refresh cached content.</div>
+        </section>
+
+        <!-- KPIs with fragments (animated reveals) -->
+        <section>
+          <h2>Headline KPIs</h2>
+          <div class="kpi">
+            <div class="fragment">
+              <div class="label">Revenue</div>
+              <div class="value">$3.2B</div>
+              <div class="delta">QoQ <span>▲ 6.4%</span></div>
+            </div>
+            <div class="fragment">
+              <div class="label">Net Income</div>
+              <div class="value">$410M</div>
+              <div class="delta">QoQ <span>▲ 3.1%</span></div>
+            </div>
+            <div class="fragment">
+              <div class="label">EPS (Diluted)</div>
+              <div class="value">$1.18</div>
+              <div class="delta">YoY <span>▲ 9.0%</span></div>
+            </div>
+          </div>
+          <aside class="notes">
+            Each KPI appears as a fragment. Use fragments to time your narrative.
+          </aside>
+        </section>
+
+        <!-- Markdown slide -->
+        <section data-markdown>
+          <textarea data-template>
+## Business Highlights _(Markdown)_
+
+- **Client growth:** +12% YoY  
+- **Cloud migration:** 68% of workloads
+- **Operational efficiency:** Automation saved ~**$14M** YTD
+
+> _Stakeholder takeaway:_ disciplined cost control + durable top-line.
+
+**Email:** 22ds1000103@ds.study.iitm.ac.in
+
+Notes:
+- This slide is authored in Markdown directly inside the HTML using `data-markdown`.
+- You can also load external `.md` files if preferred.
+          </textarea>
+          <aside class="notes">
+            Call out that this slide is pure Markdown. Mention the email again for contact.
+          </aside>
+        </section>
+
+        <!-- Code sample with syntax highlighting -->
+        <section>
+          <h2>Code Sample — KPI Trend Calculation</h2>
+          <pre><code class="language-python" data-trim>
+import pandas as pd
+
+def growth_rate(current, prior):
+    # Simple QoQ growth rate calculation
+    return (current / prior - 1.0) * 100.0
+
+revenue_q2 = 3_200_000_000
+revenue_q1 = 3_005_000_000
+print(f"QoQ revenue growth: {growth_rate(revenue_q2, revenue_q1):.2f}%")
+          </code></pre>
+          <aside class="notes">
+            The Highlight plugin auto-detects languages by class name (language-python).
+            You can paste SQL, Java, YAML — anything. Keep snippets concise.
+          </aside>
+        </section>
+
+        <!-- Math / financial formulas -->
+        <section>
+          <h2>Financial Math</h2>
+          <p>Net Present Value:</p>
+          <p>$$\text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} - C_0$$</p>
+          <p>CAPM:</p>
+          <p>$$\mathbb{E}[R_i] = R_f + \beta_i (R_m - R_f)$$</p>
+          <p class="fragment">Sharpe Ratio: $$S = \frac{\mathbb{E}[R_p - R_f]}{\sigma_p}$$</p>
+          <aside class="notes">
+            Math rendered via the KaTeX-based math plugin. Use inline $...$ or block $$...$$.
+          </aside>
+        </section>
+
+        <!-- Closing with call to action -->
+        <section data-transition="convex">
+          <h2>Q&A</h2>
+          <p class="fragment">Thank you!</p>
+          <p class="fragment">Contact: <strong>22ds1000103@ds.study.iitm.ac.in</strong></p>
+          <aside class="notes">
+            Invite questions. Share the GitHub Pages link. Remind them they can add ?v=2 to bypass cache.
+          </aside>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Reveal core JS (ESM) + plugins -->
+    <script type="module">
+      import Reveal from "https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.esm.js";
+      import Markdown from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.esm.js";
+      import Highlight from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.esm.js";
+      import Math from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.esm.js";
+
+      const deck = new Reveal({
+        hash: true,
+        slideNumber: true,
+        transition: "fade",
+        plugins: [ Markdown, Highlight, Math ],
+        // KaTeX config for math plugin
+        math: {
+          katexScript: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js",
+          katexStylesheet: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
+          // Enable $...$ inline math
+          inlineDelimiter: ["$", "$"],
+        }
+      });
+      deck.initialize();
+    </script>
+  </body>
+</html>
